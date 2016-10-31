@@ -3,7 +3,6 @@ title:  "Using QtTest Effectively"
 date:   2016-10-31 3:33:00
 categories: [qt]
 tags: [qt]
-comments: false
 ---
 
 Unittesting GUI applications is painful, often slow and with limited testing frameworks available. Although most developers use a design patterns that separate the view from the underlying model, allowing testing of the backend, the resulting test coverage is insufficient for code with many execution paths in the visual layer. QtTest therefore provides tools to unittest both Qt views and models, simplifying test-driven development and GUI debugging.
