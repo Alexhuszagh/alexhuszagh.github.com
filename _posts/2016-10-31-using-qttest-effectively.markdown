@@ -106,9 +106,7 @@ int main(int argc, char *argv[])
 
 # Test Suite
 
-Other unittesting frameworks have concepts of [TestSuites][BoostTestSuite], as well as [unittest discovery][PythonTestDiscover], automatically adding each new test fixture to the unittest tree. In C++, this is difficult to implement, since the test fixture can be instantiated before the test suite. Using a local, static variable defined inside a function, we avoid this static initiation fiasco, and ensure the suite is defined before the fixture. Combining our custom main, the `runTest` lambda, and a test suite, QtTest rivals the ease of use Boost Test Library, GTest, or even Python's unittest.
-
-To create our test suite, we first define a base class with a default constructor and a static function that returns a reference to a collection of test fixtures.
+Other unittesting frameworks have concepts of [TestSuites][BoostTestSuite], as well as [unittest discovery][PythonTestDiscover], automatically adding each new test fixture to the unittest tree. In C++, this is difficult to implement, since static initialization order is undefined. Using a local, static test suite defined inside a function, and having each fixture reference this test suite, we can ensure the suite is defined before the fixture. To create our test suite, we first define a base class with a default constructor and a static function that returns a reference to the test suite.
 
 ```cpp
 #include <QObject>
@@ -127,7 +125,7 @@ public:
 };
 ```
 
-Next, we ensure that the test fixture collection is statically initialized within the function definition, and the constructor calls this function to add itself to the suite.
+Next, we ensure that the test suite is statically initialized within the member function, and the constructor adds itself to the test suite.
 
 ```cpp
 TestSuite::TestSuite()
@@ -177,7 +175,7 @@ void TestQString::testToUtf8()
 static TestQString TEST_QSTRING;
 ```
 
-Finally, we define our entry point and run the suite.
+Finally, we define our entry point and run each fixture within the suite.
 
 ```cpp
 #include "suite.hpp"
@@ -200,21 +198,9 @@ int main(int argc, char *argv[])
 }
 ```
 
-Running the suite verifies that fixture is added after suite initialization.
-
-```bash
-$ ./suite
-********* Start testing of TestQString *********
-Config: Using QtTest library 5.6.1, Qt 5.6.1 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 6.1.1 20160621 (Red Hat 6.1.1-3))
-PASS   : TestQString::initTestCase()
-PASS   : TestQString::testFromUtf8()
-PASS   : TestQString::testToUtf8()
-PASS   : TestQString::cleanupTestCase()
-Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted
-********* Finished testing of TestQString *********
-```
-
 The QMake project can be downloaded [here][TestSuite].
+
+Combining our custom main, the `runTest` lambda, and our test suite, QtTest rivals the ease of use Boost Test Library, GTest, and even Python's unittest2 library.
 
 [QtTestTutorial]:      https://doc.qt.io/qt-5/qtest-tutorial.html
 [QCOMPARE]:            https://doc.qt.io/qt-5/qtest.html#QCOMPARE
