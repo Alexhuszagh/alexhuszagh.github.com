@@ -116,8 +116,6 @@ Other unittesting frameworks have concepts of [TestSuites][BoostTestSuite], as w
  */
 class TestSuite: public QObject
 {
-    Q_OBJECT
-
 public:
      TestSuite();
 
