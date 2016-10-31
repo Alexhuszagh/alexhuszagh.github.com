@@ -2,6 +2,7 @@
 title: Jaded Biologist
 description: 'Musing of Wetlab Biologist & Bioinformatician'
 url: 'https://alexhuszagh.github.io/'
+baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
