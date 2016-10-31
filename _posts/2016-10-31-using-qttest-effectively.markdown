@@ -106,9 +106,9 @@ int main(int argc, char *argv[])
 
 # Test Suite
 
-Other unittesting frameworks have concepts of [TestSuites][BoostTestSuite], as well as [unittest discovery][PythonTestDiscover], to help organize unittests into suites and minimize the redundancy of separating the test fixture definition from its instantiation. In C++, this is difficult to implement, with issues of ordering during static initialization. We can, however, use a base class with a constructor that adds itself to a suite defined within the same compilation unit, bypassing the undefined static initialization order.
+Other unittesting frameworks have concepts of [TestSuites][BoostTestSuite], as well as [unittest discovery][PythonTestDiscover], automatically adding each new test fixture to the unittest tree. In C++, this is difficult to implement, since the test fixture can be instantiated before the test suite. Using a local, static variable defined inside a function, we avoid this static initiation fiasco, and ensure the suite is defined before the fixture. Combining our custom main, the `runTest` lambda, and a test suite, QtTest rivals the ease of use Boost Test Library, GTest, or even Python's unittest.
 
-First, we define our test suite.
+To create our test suite, we first define a base class with a default constructor and a static function that returns a reference to a collection of test fixtures.
 
 ```cpp
 #include <QObject>
@@ -127,7 +127,7 @@ public:
 };
 ```
 
-Next, we ensure that the suite is initialized within `suite()`, and each constructor uses the same suite reference.
+Next, we ensure that the test fixture collection is statically initialized within the function definition, and the constructor calls this function to add itself to the suite.
 
 ```cpp
 TestSuite::TestSuite()
@@ -138,12 +138,12 @@ TestSuite::TestSuite()
 
 std::vector<QObject*> & TestSuite::suite()
 {
-    static std::vector<QObject*> SUITE;
-    return SUITE;
+    static std::vector<QObject*> objects;
+    return objects;
 }
 ```
 
-We then derive a test case from our suite, use the inherited constructor for the suite, and initialize the suite.
+We then derive each test fixture from our suite, use the inherited constructor for the suite, and globally initialize our fixture.
 
 ```cpp
 #include "suite.hpp"
@@ -198,6 +198,20 @@ int main(int argc, char *argv[])
         runTest(*it);
     }
 }
+```
+
+Running the suite verifies that fixture is added after suite initialization.
+
+```bash
+$ ./suite
+********* Start testing of TestQString *********
+Config: Using QtTest library 5.6.1, Qt 5.6.1 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 6.1.1 20160621 (Red Hat 6.1.1-3))
+PASS   : TestQString::initTestCase()
+PASS   : TestQString::testFromUtf8()
+PASS   : TestQString::testToUtf8()
+PASS   : TestQString::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted
+********* Finished testing of TestQString *********
 ```
 
 The QMake project can be downloaded [here][TestSuite].
