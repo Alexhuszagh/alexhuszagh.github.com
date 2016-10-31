@@ -1,7 +1,7 @@
 # Site settings
 title: Jaded Biologist
 description: 'Musings of Wetlab Biologist & Bioinformatician'
-url: 'https://alexhuszagh.github.io/'
+url: 'https://alexhuszagh.github.io'
 baseurl: '/'
 google_analytics: 'UA-86636302-1'
 disqus_shortname: 'https-alexhuszagh-github-io'
