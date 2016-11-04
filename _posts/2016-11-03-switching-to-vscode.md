@@ -56,7 +56,7 @@ As much as I love VS Code, it is still missing some features I regularly use in 
 
 # Migration
 
-Overall, I'm pleased with how seamless the transition to VS Code was: I transferred my projects, build systems, theme, Sublime settings, and wrote this blog in only a few hours. The Markdown previews let me read my blog as I write it, and the debugger integrations and embedded terminal accelerate my work in C++/Python. Finally, VS Code works seamlessly on Windows and Linux, and cloud syncing keeps my user configurations the same on all workstations. VS Code is now an excellent editor, with a fast learning curve for Sublime Text users, and plenty of room to grow.
+Overall, I'm pleased with how seamless the transition to VS Code was: I transferred my projects, build systems, theme, Sublime settings, and wrote this blog in only a few hours. The live Markdown previews let me double-check my blog while writing it, and the debugger integrations and embedded terminal accelerate my work in C++/Python. Finally, VS Code works seamlessly on Windows and Linux, and cloud syncing keeps my user configurations the same on all workstations. VS Code is now an excellent editor, with a fast learning curve for Sublime Text users, and plenty of room to grow.
 
 [code-update]:      https://code.visualstudio.com/updates/v1_7
 [screenshot]:       {{ site.url }}/attachments/2016-11-03-VSCode.png
