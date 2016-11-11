@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/ahuszagh
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://alexhuszagh.github.io
+  * I am ahuszagh (https://keybase.io/ahuszagh) on keybase.
+  * I have a public key with fingerprint E6B0 8BD5 B0A1 253A 5AA3  98E8 6592 5CF4 7A6D 8A24
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01018fa19c18ae792f924fd7301ccfb536d861c9f905d466e53be0beaba21166d2a10a",
+            "fingerprint": "e6b08bd5b0a1253a5aa398e865925cf47a6d8a24",
+            "host": "keybase.io",
+            "key_id": "65925cf47a6d8a24",
+            "kid": "01018fa19c18ae792f924fd7301ccfb536d861c9f905d466e53be0beaba21166d2a10a",
+            "uid": "e14bbfd5ccf164a43571af49252af719",
+            "username": "ahuszagh"
+        },
+        "service": {
+            "hostname": "alexhuszagh.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1478835692,
+    "expire_in": 157680000,
+    "prev": "6d87fc2b6551f88fd70cd325f7e7d9f51be7e61d23005f28b5d727b978feeff9",
+    "seqno": 18,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtkn9MVWUYx+8FA0GSG7ARgq0doCQIz3vu+XkbmRsZzdi8DM1U7vV9z3nPvWeX
++4N77uWnUCoyCGUQkkFiIyZjw9kMJYxwbAk3syY226hwypwwrwULSEZhdi7pf/3Z
++8+799nn+32+z7O3+elwXZgef7BvsdL5fpr+6j2k252eM1dFILdUQZiqCAdevXCx
+hFWf1aFIhIkgAQl4GQJBBDzEnEDJAkXLEmckgSjKiDGyEs8CUZAFkpFolsWMEWES
+YYggBQDLShQEJCSyCFlx2bDX41VcPs0Ws4jkkcQgEgKKMUIGQqPAY55lBIoRZZqD
+mi+kaE1od6shhRYOQRVnK26tpj2sq/H+g/+fc/tX7TCgEZIlRtMCloa0keEAlGmt
+OQVlDgghUMVeF3RijYZ2v1oJbXaiOovQqqWKiEOLDU3yhCjG5Y+hbJvis/vRv4N5
+vG6fW3QXa4jd5/OoppCFr8IT0pRhZH3sZkWKS9IWqilKsVdV3C7CBDRS9Ckhe0Bz
+PG9kWIHKInC5R/FiqxIiGI7lSe2E+uBSAmn7k3hOFinEMgyQeV5bEClKRoqROcxJ
+gswAhDnMAokykiQjUzxiJI7ikMDxMsayHJpbxSUut2bOa0GhTcupKjYX9Pm9mKiO
+bghLWaPTh+kingoL/TVddJThyQccOmnQ1R/Nav0j//RstS0CzdU9+nQljd/zW11v
+MGHNkbFfY4d6Y08uXbo49qCqP/yLikEOdIW/uXZH/Ya8tdzVz/NbztS70+HUUjCm
+EHkq36lp3Z88bzqR/3fyzWd/bx/3N1adC2a42w5NZrzcked/lJtqf0V/8Yclc6ch
+mLE5PxzUx0zRJxJTAhZxJKfspW2RrxXuOJiqO7Pu6EBSvze4abTSaTGTp71NNZbB
+zZss24mRBUPgwo8rdM8b0zVlRT29aFhnYnLplazh7dNnxyJG8uaTh//ceM2mXAjr
+yxxIPWgBvqaZQI761ownnXM2nP/M8FfGeMDcM7pyOSbzS30U746fiTB+XNHdu3D3
+QzX4QtfxmGX+7cI9bcPvdjdd+TleV/ReiyPlmb3fW0y1/q3TNzNrH9yJmml+2H7E
+49xb2zETTHouuvFA+e6VF5uPnfcuLDvjJuDXgU8ct+8OdF75ZpsjpS93PXvrq287
++DuJafcVc8EN5y+LD+etz3Nx/SWXuw5sGTPby/MatxJxCTsDu/Kvt1zr2Jjpb9zZ
+OT6Rfg+2NgxKg5bIIkdnX+Yuv+iIjyyYHT2+/1RSweT1Q8tDjg16p80al10Ta4gv
+mfyI7P8p5ixtFtomlub2Ha5OEM4F77fdapJPqYOvOrrbF2dfB22JhyPi102lw7QI
++cbtSwnf1Y0o67f8Aw==
+=+LZa
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ahuszagh
+
+==================================================================
+
