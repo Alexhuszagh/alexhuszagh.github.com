@@ -30,6 +30,10 @@ All tests were run with the following parameters, for GCC 6.3, Clang 3.8, and Fe
   </thead>
   <tbody>
     <tr>
+      <th><br/></th>
+      <th><br/></th>
+    </tr>
+    <tr>
       <th align="center">CPU</th>
       <th align="center">i7-6560U, 2.20GHz</th>
     </tr>
