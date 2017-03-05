@@ -101,7 +101,9 @@ All tests were run with the following parameters, for GCC 6.3, Clang 3.8, and Fe
 
 # Conclusion
 
-In general, the hashmap implementations (sequenced) of Boost MultiIndex are superior to the STL containers, both in memory (data not shown) and lookup time. Similarly, using MinGW, the ordered MultiIndex containers outperform their STL counterparts for both memory and lookup speed. However, with Clang and GCC, although the MultiIndex containers use less memory than their ordered STL counterparts, they have worse lookup times, and this performance gap increases with container size. Overall, MultiIndex is an excellent drop-in replacement for unordered containers, but suffers severe performance defects for ordered indexes.
+In general, the hashmap implementations (sequenced) of Boost MultiIndex are superior to the STL containers, both in memory (data not shown) and iteration time. Similarly, using MinGW, the ordered MultiIndex containers outperform their STL counterparts for both memory and iteration speed. However, with Clang and GCC, although the MultiIndex containers use less memory than their ordered STL counterparts, they have worse iteration times, and this performance gap increases with container size. Overall, MultiIndex is an excellent drop-in replacement for unordered containers, but suffers severe performance defects for ordered index iteration.
+
+This gap between the ordered and unordered index iteration is trouble, since Boost's documentation states precisely the opposite.
 
 [multiindex-performance]:   http://www.boost.org/doc/libs/1_50_0/libs/multi_index/doc/performance.html#tests
 [szborows]:                 https://szborows.blogspot.com/2015/04/real-boostmultiindex-performance.html
