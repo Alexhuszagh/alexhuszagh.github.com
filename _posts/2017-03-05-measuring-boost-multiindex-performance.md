@@ -7,6 +7,7 @@ tags:
  - c++
  - performance
  - boost
+ - multi_index
 ---
 
 Although I generally view most of Boost as bloatware that suffers from feature-creep, Boost MultiIndex provides a simple, STL-like container with different views, allowing fast data acess with multiple indexers.
