@@ -1,13 +1,13 @@
 ---
 title:  "Scoped Enums and Bitwise Operators"
-date:   2018-01-25 2:32:00
+date:   2018-01-15 14:32:00
 categories:
- - c++
+ - cpp
  - enum
- - scoped enums
- - bitwise operators
+ - scoped-enums
+ - bitwise-operators
 tags:
- - c++
+ - cpp
 ---
 
 C++11 introduced the concept of type-safe, scoped enums, which solve both namespace pollution of the neum members into the enclosing scope and implicit conversions to integral types. These enums may be used as follows:
@@ -50,25 +50,25 @@ enum class Canine
 
 Animal eagle = Animal::CLAWS | Animal::WINGS | Animal::ENDANGERED;
 Plant venus_fly_trap = Plant::CARNIVOROUS;
-// eagle | venus_fly_trap would be a compile-time error
+// Animal hybrid = eagle | venus_fly_trap; compile-time error
 Canine wolf = Canine::WOLF | Animal::CLAWS;
-// Animal fox = Animal::CLAWS | Canine::FOX; would also be a compile-time error
+// Animal fox = Animal::CLAWS | Canine::FOX; compile-time error
 ```
 
 # Solution
 
 The following code introduces a single macro, `SCOPED_ENUM_FLAG`, with two possible signatures, that exports type-safe bitwise operators between scoped enums.
 
-To support bitwise operators between a scoped enum and itself, use:
+To support bitwise operators within a scoped enum, add the following line after the enum declaration:
 
 ```cpp
-SCOPED_ENUM_FLAG(Animal);
+SCOPED_ENUM_FLAG(Animal)
 ```
 
-To support bitwise operations between two different scoped enums, where the returned enum from each bitwise operator is the left-most type (in this case, `Canine`), use:
+To support bitwise operations between two different scoped enums, where the returned enum from each bitwise operator is the left-most type (in this case, `Canine`), add the following line after the enum declaration:
 
 ```cpp
-SCOPED_ENUM_FLAG(Canine, Animal);
+SCOPED_ENUM_FLAG(Canine, Animal)
 ```
 
 # Code
