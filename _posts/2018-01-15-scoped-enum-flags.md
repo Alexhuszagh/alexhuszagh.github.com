@@ -2,12 +2,12 @@
 title:  "Scoped Enums and Bitwise Operators"
 date:   2018-01-15 14:32:00
 categories:
- - cpp
+ - c++
  - enum
  - scoped-enums
  - bitwise-operators
 tags:
- - cpp
+ - c++
 ---
 
 C++11 introduced the concept of type-safe, scoped enums, which solve both namespace pollution of the neum members into the enclosing scope and implicit conversions to integral types. These enums may be used as follows:
