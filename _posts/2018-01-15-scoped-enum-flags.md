@@ -65,7 +65,7 @@ To support bitwise operators within a scoped enum, add the following line after 
 SCOPED_ENUM_FLAG(Animal)
 ```
 
-To support bitwise operations between two different scoped enums, where the returned enum from each bitwise operator is the left-most type (in this case, `Canine`), add the following line after the enum declaration:
+To support bitwise operations between two different scoped enums, where the returned enum from each bitwise operator is the left-most type (in this case, `Canine`), add the following line after the enum declarations:
 
 ```cpp
 SCOPED_ENUM_FLAG(Canine, Animal)
